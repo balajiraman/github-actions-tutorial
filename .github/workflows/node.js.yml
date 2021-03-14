@@ -11,12 +11,15 @@ on:
 
 jobs:
   pre-build:
+    name: Pre-Build Check
     runs-on: sh-windows-x64
-  steps:
-    - name: Check connectivity
-      run: echo "Hello World " + %computername%
+    
+    steps:
+      - name: Check connectivity
+        run: echo "Hello World " + %computername%
 
   build:
+    name: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
